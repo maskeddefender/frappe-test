@@ -22,10 +22,23 @@ app_license = "mit"
 # ]
 
 fixtures = [
-	{"dt": "DocType",
-		"filters": [
-			["name", "in", ["Ride Booking", "Vehicle Ride"]]
-		]},
+	{"dt": "DocType", 
+	 "filters": [
+		["name", "in", ["Ride Booking", "Vehicle Ride", "Item", "Customer"]]
+	 ]
+	},
+	{"dt": "Ride Booking"},
+	{"dt": "Vehicle Ride"},
+	{"dt": "Item",
+	 "filters": [
+		["item_group", "=", "Services"]
+	 ]
+	},
+	{"dt": "Customer",
+	 "filters": [
+		["customer_name", "in", ["Aman Kumar", "Gopesh Kishore"]]
+	 ]
+	}
 ]
 
 # Includes in <head>
