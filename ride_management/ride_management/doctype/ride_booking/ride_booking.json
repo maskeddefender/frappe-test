@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-09-25 18:07:21.207905",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "type",
+  "make",
+  "price_per_km",
+  "estimated_km",
+  "services",
+  "total_amount",
+  "customer",
+  "customer_name",
+  "phone_number",
+  "booking_date",
+  "return_date",
+  "naming_series"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle Ride",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicle.make",
+   "fetch_if_empty": 1,
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "label": "Make"
+  },
+  {
+   "fetch_from": "vehicle.type",
+   "fetch_if_empty": 1,
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type"
+  },
+  {
+   "fetch_from": "vehicle.price_per_km",
+   "fetch_if_empty": 1,
+   "fieldname": "price_per_km",
+   "fieldtype": "Currency",
+   "label": "Price Per Km"
+  },
+  {
+   "fieldname": "estimated_km",
+   "fieldtype": "Float",
+   "label": "Estimated KM"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Table",
+   "label": "Services",
+   "options": "Ride Add On"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "customer.mobile_no",
+   "fetch_if_empty": 1,
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Return Date"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "label": "Series",
+   "read_only": 1,
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-25 18:26:45.931962",
+ "modified_by": "Administrator",
+ "module": "Ride Management",
+ "name": "Ride Booking",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
